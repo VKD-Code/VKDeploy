@@ -71,6 +71,7 @@ public class TC0001_Login extends SetupDriver {
 		Thread.sleep(3000);
 		driver.findElement(By.xpath("//input[@value='Sign in']")).click();
 		System.out.println("Login successful.");
+		System.out.println("Check console log.");
 		 //Press key
     
 		
