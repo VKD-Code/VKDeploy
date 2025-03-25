@@ -1,0 +1,22 @@
+"Test Name","Class Name","Description","Browser","Version","Platform","Start Time","End Time","Duration (sec)","Status","Error","Screenshot","OS Name","User Name","Computer Name","Logs"
+"Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","DeploySmokeTestOnChrome.TC0001_Login","Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","chrome","133.0.6943.142","windows","19:26:42.910","19:27:03.908","21.00","PASS","","","Windows 10","Admin","N/A","[19:26:55.453] Check console log for login
+[19:27:03.904] Login successfull.
+"
+"Select Workstation(s) > Assign Group > Verify Group Assignment","DeploySmokeTestOnChrome.TC0003_Addgroup","Select Workstation(s) > Assign Group > Verify Group Assignment","chrome","133.0.6943.142","windows","19:27:03.919","19:27:10.931","7.01","FAIL","no such element: Unable to locate element: {""method"":""xpath"",""selector"":""//input[@id='txtLoginEmail']""}
+  (Session info: chrome=133.0.6943.142)
+For documentation on this error, please visit: https://www.selenium.dev/documentation/webdriver/troubleshooting/errors#no-such-element-exception
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3274edaf87f3e317845d6f000b0fa96e, findElement {value=//input[@id='txtLoginEmail'], using=xpath}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49280/devtoo..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 3274edaf87f3e317845d6f000b0fa96e","D:\New Machine\FailedTestImage\addgroup.png","Windows 10","Admin","N/A",""
+"Select Workstation(s) > Add Tag > Verify Tag Assignment","DeploySmokeTestOnChrome.TC0004_Assigntag","Select Workstation(s) > Add Tag > Verify Tag Assignment","chrome","133.0.6943.142","windows","19:27:13.509","19:27:18.114","4.61","FAIL","element click intercepted: Element is not clickable at point (1512, 563)
+  (Session info: chrome=133.0.6943.142)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [3274edaf87f3e317845d6f000b0fa96e, clickElement {id=f.7BE7B5FBAC11DC3A31D27C891B6A3A76.d.AB0DF30A6019A0417EDE169107D749BF.e.1447}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:49280}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:49280/devtoo..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (3274edaf87f3e317845d6f000b0fa96e)] -> xpath: //input[@value='Manage Tags']]
+Session ID: 3274edaf87f3e317845d6f000b0fa96e","D:\New Machine\FailedTestImage\assigntag.png","Windows 10","Admin","N/A",""

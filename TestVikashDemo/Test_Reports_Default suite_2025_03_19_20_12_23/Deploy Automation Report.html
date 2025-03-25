@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Report</title>
+    <style>
+        :root {
+            --primary-color: #4a6da7;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
+            --warning-color: #ffc107;
+            --light-color: #f8f9fa;
+            --dark-color: #343a40;
+        }
+        body { font-family: 'Segoe UI', Roboto, Arial, sans-serif; margin: 0; padding: 0; background-color: #f5f5f5; color: #333; font-size: 12px; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 10px; }
+        .header { background-color: var(--primary-color); color: white; padding: 10px; border-radius: 5px 5px 0 0; }
+        .header h1 { margin: 0; font-size: 18px; }
+        .info-bar { background-color: white; padding: 8px; display: flex; justify-content: space-between; border-bottom: 1px solid #ddd; }
+        .info-item { font-size: 12px; }
+        .summary { display: flex; justify-content: space-between; margin: 15px 0; }
+        .summary-card { flex: 1; max-width: 24%; background-color: white; border-radius: 5px; padding: 10px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); text-align: center; }
+        .summary-card.total { border-top: 3px solid var(--primary-color); }
+        .summary-card.passed { border-top: 3px solid var(--success-color); }
+        .summary-card.failed { border-top: 3px solid var(--danger-color); }
+        .summary-card.skipped { border-top: 3px solid var(--warning-color); }
+        .summary-value { font-size: 28px; font-weight: bold; margin: 8px 0; }
+        .summary-label { color: #666; font-size: 12px; }
+        .card { background-color: white; border-radius: 5px; margin-bottom: 15px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .card-header { padding: 10px; border-bottom: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .card-title { margin: 0; font-size: 16px; color: var(--dark-color); }
+        .card-body { padding: 10px; }
+        .tabs { display: flex; margin-bottom: 10px; border-bottom: 1px solid #ddd; }
+        .tab { padding: 6px 12px; cursor: pointer; border-radius: 4px 4px 0 0; margin-right: 3px; font-size: 12px; }
+        .tab.active { background-color: var(--primary-color); color: white; }
+        .tab:not(.active) { background-color: #eee; }
+        .tab:hover:not(.active) { background-color: #ddd; }
+        table { width: 100%; border-collapse: collapse; font-size: 11px; }
+        th { padding: 8px; text-align: left; background-color: #f8f9fa; border-bottom: 1px solid #ddd; font-weight: 600; }
+        td { padding: 6px 8px; border-bottom: 1px solid #eee; }
+        tr:hover { background-color: #f5f5f5; }
+        .badge { padding: 3px 6px; border-radius: 3px; font-size: 11px; font-weight: 600; }
+        .badge-success { background-color: #e8f5e9; color: var(--success-color); }
+        .badge-danger { background-color: #ffebee; color: var(--danger-color); }
+        .badge-warning { background-color: #fff8e1; color: #f57c00; }
+        .details-btn { background-color: var(--primary-color); color: white; border: none; padding: 3px 8px; border-radius: 3px; cursor: pointer; font-size: 11px; }
+        .details-btn:hover { background-color: #3c5a8a; }
+        .modal { display: none; position: fixed; z-index: 1000; left: 0; top: 0; width: 100%; height: 100%; background-color: rgba(0,0,0,0.5); }
+        .modal-content { background-color: white; margin: 5% auto; padding: 15px; border-radius: 5px; width: 80%; max-width: 900px; max-height: 80vh; overflow-y: auto; position: relative; }
+        .close-btn { position: absolute; top: 5px; right: 10px; font-size: 20px; font-weight: bold; cursor: pointer; color: #888; }
+        .close-btn:hover { color: #333; }
+        .test-info { margin-bottom: 15px; }
+        .test-info h3 { margin-top: 0; border-bottom: 1px solid #eee; padding-bottom: 8px; font-size: 16px; }
+        .test-info p { margin: 4px 0; line-height: 1.4; font-size: 12px; }
+        .test-logs { background-color: #f5f5f5; border: 1px solid #ddd; border-radius: 4px; padding: 8px; height: 250px; overflow-y: auto; font-family: monospace; font-size: 11px; white-space: pre-wrap; }
+        .screenshot-area { margin-top: 15px; text-align: center; }
+        .screenshot-area img { max-width: 100%; max-height: 350px; border: 1px solid #ddd; border-radius: 4px; cursor: pointer; }
+        .no-data { text-align: center; padding: 20px; color: #666; font-style: italic; font-size: 12px; }
+        .search-box { padding: 0 5px; display: flex; }
+        .search-input { flex: 1; padding: 4px 8px; border: 1px solid #ddd; border-radius: 3px; margin-right: 5px; font-size: 12px; }
+        .search-btn { background-color: var(--primary-color); color: white; border: none; padding: 4px 10px; border-radius: 3px; cursor: pointer; font-size: 12px; }
+        .search-btn:hover { background-color: #3c5a8a; }
+        .progress-container { height: 4px; width: 100%; background-color: #eee; margin-top: 5px; border-radius: 2px; overflow: hidden; }
+        .progress-bar { height: 100%; background-color: var(--success-color); border-radius: 2px; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="info-bar">
+            <div class="info-item">
+                <strong>Date:</strong> 19 March 2025
+            </div>
+            <div class="info-item">
+                <strong>Duration:</strong> 0m 0s
+            </div>
+            <div class="info-item">
+                <strong>OS:</strong> Windows 10
+            </div>
+            <div class="info-item">
+                <strong>User:</strong> Admin
+            </div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-bar" style="width: 0.0%;"></div>        </div>
+        <div class="summary">
+            <div class="summary-card total">
+                <div class="summary-label">Total Tests</div>
+                <div class="summary-value">0</div>
+            </div>
+            <div class="summary-card passed">
+                <div class="summary-label">Passed</div>
+                <div class="summary-value">0</div>
+                <div>0.0%</div>            </div>
+            <div class="summary-card failed">
+                <div class="summary-label">Failed</div>
+                <div class="summary-value">0</div>
+                <div>0.0%</div>            </div>
+            <div class="summary-card skipped">
+                <div class="summary-label">Skipped</div>
+                <div class="summary-value">0</div>
+                <div>0.0%</div>            </div>
+        </div>
+        <div class="card">
+            <div class="card-header">
+                <h2 class="card-title">Test Execution Details</h2>
+                <div class="search-box">
+                    <input type="text" id="searchInput" class="search-input" placeholder="Search test names...">
+                    <button class="search-btn" onclick="searchTests()">Search</button>
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="tabs">
+                    <div class="tab active" onclick="filterTests('all')">All Tests (0)</div>
+                    <div class="tab" onclick="filterTests('pass')">Passed (0)</div>
+                    <div class="tab" onclick="filterTests('fail')">Failed (0)</div>
+                    <div class="tab" onclick="filterTests('skip')">Skipped (0)</div>
+                </div>
+                <table id="testTable">
+                    <thead>
+                        <tr>
+                            <th>Test Name</th>
+                            <th>Browser</th>
+                            <th>Duration</th>
+                            <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                </table>
+                <div id="noResults" class="no-data" style="display: none;">No matching tests found</div>
+            </div>
+        </div>
+        <div id="testDetailsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <div class="test-info">
+                    <h3 id="modalTestName">Test Details</h3>
+                    <p><strong>Status:</strong> <span id="modalStatus"></span></p>
+                    <p><strong>Browser:</strong> <span id="modalBrowser"></span></p>
+                    <p><strong>Duration:</strong> <span id="modalDuration"></span></p>
+                    <p><strong>Start Time:</strong> <span id="modalStartTime"></span></p>
+                    <p><strong>End Time:</strong> <span id="modalEndTime"></span></p>
+                    <p id="modalErrorContainer" style="display: none;"><strong>Error:</strong> <span id="modalError"></span></p>
+                </div>
+                <h4>Test Logs:</h4>
+                <div id="modalLogs" class="test-logs"></div>
+                <div id="modalScreenshot" class="screenshot-area"></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Store test data for details modal
+        const testData = {
+        };
+        // Wait for document to be fully loaded
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize global variables
+            window.modal = document.getElementById('testDetailsModal');
+            window.searchInput = document.getElementById('searchInput');
+            window.testRows = document.querySelectorAll('.test-row');
+            window.noResults = document.getElementById('noResults');
+            
+            // Add event listener for search input
+            if (window.searchInput) {
+                window.searchInput.addEventListener('keyup', function(event) {
+                    if (event.key === 'Enter') {
+                        searchTests();
+                    }
+                });
+            }
+            
+            // Add event listener for closing modal when clicking outside
+            window.onclick = function(event) {
+                if (event.target === window.modal) {
+                    closeModal();
+                }
+            };
+        });
+
+        // Filter tests by status
+        function filterTests(status) {
+            console.log('Filtering by status: ' + status);
+            // Update active tab
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+                if ((status === 'all' && tab.innerText.toLowerCase().includes('all')) ||
+                    (status === 'pass' && tab.innerText.toLowerCase().includes('passed')) ||
+                    (status === 'fail' && tab.innerText.toLowerCase().includes('failed')) ||
+                    (status === 'skip' && tab.innerText.toLowerCase().includes('skipped'))) {
+                    tab.classList.add('active');
+                }
+            });
+
+            // Filter table rows
+            let visibleCount = 0;
+            document.querySelectorAll('.test-row').forEach(row => {
+                const rowStatus = row.getAttribute('data-status');
+                console.log('Row status: ' + rowStatus);
+                const searchText = document.getElementById('searchInput').value.toLowerCase();
+                const testName = row.cells[0].innerText.toLowerCase();
+                const matchesSearch = searchText === '' || testName.includes(searchText);
+
+                if ((status === 'all' || rowStatus === status) && matchesSearch) {
+                    row.style.display = '';
+                    visibleCount++;
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+
+            // Show/hide no results message
+            document.getElementById('noResults').style.display = visibleCount === 0 ? 'block' : 'none';
+        }
+
+        // Search function
+        function searchTests() {
+            const activeTab = document.querySelector('.tab.active');
+            let status = 'all';
+            if (activeTab) {
+                if (activeTab.innerText.toLowerCase().includes('passed')) status = 'pass';
+                else if (activeTab.innerText.toLowerCase().includes('failed')) status = 'fail';
+                else if (activeTab.innerText.toLowerCase().includes('skipped')) status = 'skip';
+            }
+            filterTests(status);
+        }
+
+        // Show test details in modal
+        function showTestDetails(testName) {
+            const test = testData[testName];
+            if (!test) return;
+
+            // Set modal content
+            document.getElementById('modalTestName').textContent = testName;
+            
+            // Set status with appropriate styling
+            const statusSpan = document.getElementById('modalStatus');
+            let statusClass = '';
+            let statusText = '';
+            
+            switch (test.status) {
+                case 'PASS':
+                    statusClass = 'badge-success';
+                    statusText = 'Passed';
+                    break;
+                case 'FAIL':
+                    statusClass = 'badge-danger';
+                    statusText = 'Failed';
+                    break;
+                case 'SKIP':
+                    statusClass = 'badge-warning';
+                    statusText = 'Skipped';
+                    break;
+                default:
+                    statusText = test.status;
+            }
+            
+            statusSpan.innerHTML = `<span class="badge ${statusClass}">${statusText}</span>`;
+            
+            // Set other test details
+            document.getElementById('modalBrowser').textContent = test.browser;
+            document.getElementById('modalDuration').textContent = test.duration;
+            document.getElementById('modalStartTime').textContent = test.startTime;
+            document.getElementById('modalEndTime').textContent = test.endTime;
+            
+            // Handle error message if present
+            const errorContainer = document.getElementById('modalErrorContainer');
+            if (test.error) {
+                document.getElementById('modalError').textContent = test.error;
+                errorContainer.style.display = 'block';
+            } else {
+                errorContainer.style.display = 'none';
+            }
+            
+            // Set logs
+            document.getElementById('modalLogs').innerHTML = test.logs.replace(/\n/g, '<br>');
+            
+            // Handle screenshot if available
+            const screenshotArea = document.getElementById('modalScreenshot');
+            if (test.screenshot) {
+                screenshotArea.innerHTML = `
+                    <h4>Screenshot:</h4>
+                    <img src="${test.screenshot}" onclick="window.open(this.src)" alt="Test Screenshot">
+                `;
+            } else {
+                screenshotArea.innerHTML = '';
+            }
+            
+            // Show modal
+            document.getElementById('testDetailsModal').style.display = 'block';
+        }
+        
+        // Close modal
+        function closeModal() {
+            document.getElementById('testDetailsModal').style.display = 'none';
+        }
+    </script>
+</body>
+</html>

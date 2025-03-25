@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results ignored="0" total="2" passed="1" failed="1" skipped="0">
+  <reporter-output>
+  </reporter-output>
+  <suite started-at="2025-03-10T13:11:48 IST" name="CrossBrTestSuite" finished-at="2025-03-10T13:12:33 IST" duration-ms="44859">
+    <groups>
+    </groups>
+    <test started-at="2025-03-10T13:11:48 IST" name="ChromeTest" finished-at="2025-03-10T13:12:33 IST" duration-ms="44859">
+      <class name="DeploySmokeTestOnChrome.TC0001_Login">
+        <test-method is-config="true" signature="setUpDriver(java.lang.String,org.testng.ITestContext)[pri:0, instance:DeploySmokeTestOnChrome.TC0001_Login@1dac5ef]" started-at="2025-03-10T13:11:49 IST" name="setUpDriver" finished-at="2025-03-10T13:11:52 IST" duration-ms="2963" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[chrome]]>
+              </value>
+            </param>
+            <param index="1">
+              <value>
+                <![CDATA[org.testng.TestRunner@49c7b90e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setUpDriver -->
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:DeploySmokeTestOnChrome.TC0001_Login@1dac5ef]" started-at="2025-03-10T13:11:52 IST" name="setDriver" finished-at="2025-03-10T13:11:52 IST" duration-ms="2" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49c7b90e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method signature="VerifyLoginWorksAsExpected()[pri:0, instance:DeploySmokeTestOnChrome.TC0001_Login@1dac5ef]" started-at="2025-03-10T13:11:52 IST" name="VerifyLoginWorksAsExpected" description="Login &gt; 2FA verification &gt; Disable 2FA in Org Settings &gt; Re-login without 2FA." finished-at="2025-03-10T13:12:14 IST" duration-ms="22330" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- VerifyLoginWorksAsExpected -->
+        <test-method is-config="true" signature="tearDown()[pri:0, instance:DeploySmokeTestOnChrome.TC0001_Login@1dac5ef]" started-at="2025-03-10T13:12:33 IST" name="tearDown" finished-at="2025-03-10T13:12:33 IST" duration-ms="364" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- DeploySmokeTestOnChrome.TC0001_Login -->
+      <class name="DeploySmokeTestOnChrome.TC0004_Assigntag">
+        <test-method is-config="true" signature="setDriver(org.testng.ITestContext)[pri:0, instance:DeploySmokeTestOnChrome.TC0004_Assigntag@68e5eea7]" started-at="2025-03-10T13:12:14 IST" name="setDriver" finished-at="2025-03-10T13:12:14 IST" duration-ms="1" status="PASS">
+          <params>
+            <param index="0">
+              <value>
+                <![CDATA[org.testng.TestRunner@49c7b90e]]>
+              </value>
+            </param>
+          </params>
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setDriver -->
+        <test-method signature="assigntag()[pri:0, instance:DeploySmokeTestOnChrome.TC0004_Assigntag@68e5eea7]" started-at="2025-03-10T13:12:14 IST" name="assigntag" description="Select Workstation(s) &gt; Add Tag &gt; Verify Tag Assignment" finished-at="2025-03-10T13:12:24 IST" duration-ms="9537" status="FAIL">
+          <exception class="org.openqa.selenium.ElementClickInterceptedException">
+            <message>
+              <![CDATA[element click intercepted: Element <button class="btn btnWhite customAppButton" type="button" data-dismiss="modal">...</button> is not clickable at point (1443, 683). Other element would receive the click: <div id="dvCreateNewTagPopup" class="modal fade show" style="z-index: 1100; display: block;" data-backdrop="static" aria-modal="true">...</div>
+  (Session info: chrome=133.0.6943.142)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c03cdc87a0fb63f8a70582c9c9142849, clickElement {id=f.9BE256BC3EDEC21EE533CD6233814388.d.1BBE686FB6466557143822D7F290C717.e.525}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59418/devtoo..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c03cdc87a0fb63f8a70582c9c9142849)] -> xpath: //button[text()='Done']]
+Session ID: c03cdc87a0fb63f8a70582c9c9142849]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <button class="btn btnWhite customAppButton" type="button" data-dismiss="modal">...</button> is not clickable at point (1443, 683). Other element would receive the click: <div id="dvCreateNewTagPopup" class="modal fade show" style="z-index: 1100; display: block;" data-backdrop="static" aria-modal="true">...</div>
+  (Session info: chrome=133.0.6943.142)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [c03cdc87a0fb63f8a70582c9c9142849, clickElement {id=f.9BE256BC3EDEC21EE533CD6233814388.d.1BBE686FB6466557143822D7F290C717.e.525}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59418}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59418/devtoo..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (c03cdc87a0fb63f8a70582c9c9142849)] -> xpath: //button[text()='Done']]
+Session ID: c03cdc87a0fb63f8a70582c9c9142849
+at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:190)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:223)
+at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:76)
+at DeploySmokeTestOnChrome.TC0004_Assigntag.assigntag(TC0004_Assigntag.java:53)
+at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103)
+at java.base/java.lang.reflect.Method.invoke(Method.java:580)
+at org.testng.internal.invokers.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:141)
+at org.testng.internal.invokers.TestInvoker.invokeMethod(TestInvoker.java:686)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethod(TestInvoker.java:230)
+at org.testng.internal.invokers.MethodRunner.runInSequence(MethodRunner.java:63)
+at org.testng.internal.invokers.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:992)
+at org.testng.internal.invokers.TestInvoker.invokeTestMethods(TestInvoker.java:203)
+at org.testng.internal.invokers.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:154)
+at org.testng.internal.invokers.TestMethodWorker.run(TestMethodWorker.java:134)
+at java.base/java.util.ArrayList.forEach(ArrayList.java:1596)
+at org.testng.TestRunner.privateRun(TestRunner.java:739)
+at org.testng.TestRunner.run(TestRunner.java:614)
+at org.testng.SuiteRunner.runTest(SuiteRunner.java:421)
+at org.testng.SuiteRunner$SuiteWorker.run(SuiteRunner.java:463)
+at org.testng.internal.thread.ThreadUtil.lambda$execute$0(ThreadUtil.java:64)
+at java.base/java.util.concurrent.FutureTask.run(FutureTask.java:317)
+at java.base/java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1144)
+at java.base/java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:642)
+at java.base/java.lang.Thread.run(Thread.java:1583)
+]]>
+            </full-stacktrace>
+          </exception> <!-- org.openqa.selenium.ElementClickInterceptedException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- assigntag -->
+      </class> <!-- DeploySmokeTestOnChrome.TC0004_Assigntag -->
+    </test> <!-- ChromeTest -->
+  </suite> <!-- CrossBrTestSuite -->
+</testng-results>

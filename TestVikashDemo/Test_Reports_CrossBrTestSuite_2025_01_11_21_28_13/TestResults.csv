@@ -1,0 +1,24 @@
+"Test Name","Class Name","Description","Browser","Version","Platform","Start Time","End Time","Duration (sec)","Status","Error","Screenshot","OS Name","User Name","Computer Name","Logs"
+"Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","DeploySmokeTestOnChrome.TC0001_Login","Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","chrome","131.0.6778.205","windows","21:28:17.454","21:28:35.945","18.49","PASS","","","Windows 10","Admin","N/A","[21:28:27.844] Check console log for login
+[21:28:35.942] Login successfull.
+"
+"Select Workstation(s) > Assign Group > Verify Group Assignment","DeploySmokeTestOnChrome.TC0003_Addgroup","Select Workstation(s) > Assign Group > Verify Group Assignment","chrome","131.0.6778.205","windows","21:28:35.964","21:29:32.092","56.13","FAIL","element not interactable
+  (Session info: chrome=131.0.6778.205)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6be315f6b3cfb072afea0409527f3d05, clickElement {id=f.CD0322F69A9E4A0F7885C939ACBE6BD4.d.344B23A8915F9C82908BC359C9A3F261.e.648}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64528/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (6be315f6b3cfb072afea0409527f3d05)] -> xpath: //div[@class='dx-popup-content']//div[text()='aloha']]
+Session ID: 6be315f6b3cfb072afea0409527f3d05","D:\New Machine\FailedTestImage\addgroup.png","Windows 10","Admin","N/A","[21:28:43.985] Vikash Test log
+[21:28:44.966] Check console log
+"
+"Select Workstation(s) > Add Tag > Verify Tag Assignment","DeploySmokeTestOnChrome.TC0004_Assigntag","Select Workstation(s) > Add Tag > Verify Tag Assignment","chrome","131.0.6778.205","windows","21:29:36.276","21:29:44.479","8.20","FAIL","element click intercepted: Element <button class=""btn btnWhite customAppButton"" type=""button"" data-dismiss=""modal"">...</button> is not clickable at point (1157, 529). Other element would receive the click: <div id=""dvCreateNewTagPopup"" class=""modal fade show"" style=""z-index: 1100; display: block;"" data-backdrop=""static"" aria-modal=""true"">...</div>
+  (Session info: chrome=131.0.6778.205)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [6be315f6b3cfb072afea0409527f3d05, clickElement {id=f.CD0322F69A9E4A0F7885C939ACBE6BD4.d.463BAA2AB7BE902A16B7E1F79C114DDB.e.1099}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 131.0.6778.205, chrome: {chromedriverVersion: 131.0.6778.264 (2d05e315153..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:64528}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:64528/devtoo..., se:cdpVersion: 131.0.6778.205, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (6be315f6b3cfb072afea0409527f3d05)] -> xpath: //button[text()='Done']]
+Session ID: 6be315f6b3cfb072afea0409527f3d05","D:\New Machine\FailedTestImage\assigntag.png","Windows 10","Admin","N/A",""

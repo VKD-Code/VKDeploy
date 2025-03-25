@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+body { font-family: Arial, sans-serif; font-size: 10px; }
+h2 { font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 10px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+.PASS { color: green; }
+.FAIL { color: red; }
+.SKIP { color: orange; }
+.PENDING { color: gray; }
+.system-info { font-size: 10px; margin-bottom: 10px; }
+pre { font-size: 10px; margin: 0; }
+.screenshot { max-width: 200px; cursor: pointer; }
+.log-content { display: none; }
+.log-button { background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+.log-button:hover { background-color: #45a049; }
+</style>
+<script>
+function toggleLogs(buttonId, logId) {
+    var logContent = document.getElementById(logId);
+    var button = document.getElementById(buttonId);
+    if (logContent.style.display === 'none') {
+        logContent.style.display = 'block';
+        button.innerHTML = 'Hide Logs';
+    } else {
+        logContent.style.display = 'none';
+        button.innerHTML = 'Show Logs';
+    }
+}
+function showImage(src) {
+    window.open(src, '_blank', 'width=800,height=600');
+}
+</script>
+</head><body>
+<h2>Test Execution Results</h2>
+<div class='system-info'>
+OS: Windows 10 | User: Admin | Computer: N/A</div>
+<table>
+<tr><th>Test Name</th><th>Result</th><th>Time</th><th>Browser</th><th>Duration</th><th>Logs</th><th>Screenshot</th></tr>
+<tr>
+<td>Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.</td><td class='PASS'>PASS</td><td>19:38:12.368</td><td>chrome 132.0.6834.83</td><td>26.11 sec</td><td>
+<button id='btn_1' class='log-button' onclick='toggleLogs("btn_1", "log_1")'>Show Logs</button><pre id='log_1' class='log-content'>[19:38:26.349] Check console log for login
+[19:38:38.469] Login successfull.
+</pre></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>Visit All Deploy Pages.</td><td class='FAIL'>FAIL</td><td>19:38:38.504</td><td>chrome 132.0.6834.83</td><td>62.55 sec</td><td>
+<button id='btn_2' class='log-button' onclick='toggleLogs("btn_2", "log_2")'>Show Logs</button><pre id='log_2' class='log-content'>[19:38:49.509] Visiting page: Dashboard
+[19:38:53.628] Dashboard Page Load Time: 1986 ms
+[19:38:53.721] Visiting page: Applications
+[19:39:00.627] Applications Page Load Time: 1986 ms
+[19:39:00.716] Visiting page: Windows Updates
+[19:39:05.798] Windows Updates Page Load Time: 1986 ms
+[19:39:05.910] Visiting page: OS Deployment
+[19:39:12.938] OS Deployment Page Load Time: 1986 ms
+[19:39:14.141] Visiting page: Anti-Virus EXPIRED
+[19:39:18.044] Anti-Virus EXPIRED Page Load Time: 1986 ms
+[19:39:18.136] Visiting page: Inventory
+[19:39:22.576] Inventory Page Load Time: 1986 ms
+[19:39:22.656] Visiting page: Policies
+[19:39:27.142] Policies Page Load Time: 1986 ms
+[19:39:29.257] Analytics Page Load Time: 1986 ms
+[19:39:31.514] Application Usage Page Load Time: 1986 ms
+[19:39:34.092] Application Update Status Page Load Time: 1986 ms
+[19:39:36.308] Installed Applications Page Load Time: 1986 ms
+[19:39:38.667] License Management Page Load Time: 1986 ms
+[19:39:39.869] Error interacting with an app page.
+[19:39:41.042] Test failed with error: element click intercepted: Element <li class="nav-item dropdown">...</li> is not clickable at point (217, 105). Other element would receive the click: <div class="col-12 gray-row-left-common">...</div>
+  (Session info: chrome=132.0.6834.83)
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b0a17c4734712a2fbe2eb5cf77849f45, clickElement {id=f.7482878BB68245D09C7FD35BA2F074A9.d.A9D5E3D79FD2E8E5ED92A3BD9B4BC15F.e.3904}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 132.0.6834.83, chrome: {chromedriverVersion: 132.0.6834.110 (df453a35f09..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59643}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59643/devtoo..., se:cdpVersion: 132.0.6834.83, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on windows (b0a17c4734712a2fbe2eb5cf77849f45)] -> xpath: //ul[@id='navFDMainMenu']//li]
+Session ID: b0a17c4734712a2fbe2eb5cf77849f45
+</pre></td>
+<td>
+<img src='file:///D:/New Machine/FailedTestImage/visitpages.png' class='screenshot' onclick='showImage(this.src)' alt='Failed Test Screenshot'/></td>
+</tr>
+</table></body></html>

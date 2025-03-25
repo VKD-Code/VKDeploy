@@ -1,0 +1,11 @@
+"Test Name","Class Name","Description","Browser","Version","Platform","Start Time","End Time","Duration (sec)","Status","Error","Screenshot","OS Name","User Name","Computer Name","Logs"
+"Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","DeploySmokeTestOnChrome.TC0001_Login","Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","chrome","133.0.6943.142","windows","13:07:48.544","13:08:52.852","64.31","PASS","","","Windows 10","Admin","N/A","[13:07:59.541] Check console log for login
+[13:08:52.847] Login successfull.
+"
+"Select Workstation(s) > Add Tag > Verify Tag Assignment","DeploySmokeTestOnChrome.TC0004_Assigntag","Select Workstation(s) > Add Tag > Verify Tag Assignment","chrome","133.0.6943.142","windows","13:08:52.881","13:08:54.060","1.18","FAIL","invalid session id
+Build info: version: '4.25.0', revision: '8a8aea2337'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.2'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [425a24249a63f80d36b1f6bf9683da2c, screenshot {}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 133.0.6943.142, chrome: {chromedriverVersion: 133.0.6943.141 (2a5d6da0d61..., userDataDir: C:\Users\Admin\AppData\Loca...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:59357}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:59357/devtoo..., se:cdpVersion: 133.0.6943.142, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 425a24249a63f80d36b1f6bf9683da2c","","Windows 10","Admin","N/A",""

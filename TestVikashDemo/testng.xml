@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="CrossBrTestSuite" parallel="tests" thread-count="3">
+  <listeners>
+        <listener class-name="BaseClasses.Listener" />
+  </listeners>
+
+  <!-- Test for Chrome -->
+  <test name="ChromeTest">
+      <parameter name="browser" value="chrome" />
+      <classes>
+	     <class name="DeploySmokeTestOnChrome.TC0001_Login"/>
+	   <!--  <class name="DeploySmokeTestOnChrome.TC0001a_Visiallpages"/>
+	      <class name="DeploySmokeTestOnChrome.TC0002_InstallAgentForChrome"/>
+	       <class name="DeploySmokeTestOnChrome.TC0003_Addgroup"/>-->
+	      <class name="DeploySmokeTestOnChrome.TC0004_Assigntag"/>
+	     <!--<class name="DeploySmokeTestOnChrome.TC0005_Policyassign"/>
+	      <class name="DeploySmokeTestOnChrome.TC0006_Installapp"/>
+	      <class name="DeploySmokeTestOnChrome.TC0007_Uninstallapp"/>
+	      <class name="DeploySmokeTestOnChrome.TC0008_CustomScriptInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0009_CustomAppInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0010_UninstallCustomApp"/>-->
+	    <!--  <class name="DeploySmokeTestOnChrome.TC0011_Viewscreen"/>
+	        <class name="DeploySmokeTestOnChrome.TC0012_RemotePolicy"/>
+	      <class name="DeploySmokeTestOnChrome.TC0013_RemoteProConnect"/>
+	     <class name="DeploySmokeTestOnChrome.TC0014_Remoteversion"/>
+	      <class name="DeploySmokeTestOnChrome.TC0015_RemoteproUninstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0016_AppPresetAssign"/>
+	      <class name="DeploySmokeTestOnChrome.TC0017_WingetEnableDisableOrg"/>
+	      <class name="DeploySmokeTestOnChrome.TC0018_Wingetkababmenu"/>
+	      <class name="DeploySmokeTestOnChrome.TC0019_WingetVerifyApp"/>
+	      <class name="DeploySmokeTestOnChrome.TC0020_WingetInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0021_WingetAppInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0022_WigetAppUninstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0023_DarkmodeED"/>
+	      <class name="DeploySmokeTestOnChrome.TC0024_LatManStandingEnableDisable"/>
+	      <class name="DeploySmokeTestOnChrome.TC0025_CacheServerInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0026_CacheUninstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0027_WindowUpdatePatchscan"/>
+	      <class name="DeploySmokeTestOnChrome.TC0028_UserAED"/>
+	      <class name="DeploySmokeTestOnChrome.TC0029_SiteAED"/>
+	      <class name="DeploySmokeTestOnChrome.TC0030_TicketingEnableDisable"/>
+	      <class name="DeploySmokeTestOnChrome.TC0031_TicketMenuOption"/>
+	      <class name="DeploySmokeTestOnChrome.TC0032_TicketPagelaunch"/>
+	      <class name="DeploySmokeTestOnChrome.TC0033_TicketGenerate"/>
+	      <class name="DeploySmokeTestOnChrome.TC0034_TicketClose"/>
+	      <class name="DeploySmokeTestOnChrome.TC0035_AntivirusInstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0036_AntivirusFirewallED"/>
+	      <class name="DeploySmokeTestOnChrome.TC0037_AntivirusActiveProtectionED"/>
+	      <class name="DeploySmokeTestOnChrome.TC0038_AntivirusFixNow"/>
+	      <class name="DeploySmokeTestOnChrome.TC0039_Antivirusdeepscan"/>
+	      <class name="DeploySmokeTestOnChrome.TC0040_AntivirusQuickscan"/>
+	      <class name="DeploySmokeTestOnChrome.TC0041_AntivirusUninstall"/>
+	      <class name="DeploySmokeTestOnChrome.TC0042_AntiviruspageDisable"/>
+	      <class name="DeploySmokeTestOnChrome.TC0043_Inventoryrefresh"/>
+	      <class name="DeploySmokeTestOnChrome.TC0044_MsiDownload"/> 
+	      <class name="DeploySmokeTestOnChrome.TC0045_ResetPassword"/>
+	      <class name="DeploySmokeTestOnChrome.TC0046_Cleanup"/>
+	      <class name="DeploySmokeTestOnChrome.TC0047_RestartWKS"/>
+	      <class name="DeploySmokeTestOnChrome.TC0048_ShutdownWKS"/>-->
+      </classes>
+  </test>
+
+</suite> <!-- Suite -->

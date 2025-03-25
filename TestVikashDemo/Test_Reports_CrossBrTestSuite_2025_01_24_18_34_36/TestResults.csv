@@ -1,0 +1,7 @@
+"Test Name","Class Name","Description","Browser","Version","Platform","Start Time","End Time","Duration (sec)","Status","Error","Screenshot","OS Name","User Name","Computer Name","Logs"
+"Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","DeploySmokeTestOnChrome.TC0001_Login","Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","chrome","132.0.6834.83","windows","18:34:42.340","18:35:11.623","29.28","PASS","","","Windows 10","Admin","N/A","[18:34:58.091] Check console log for login
+[18:35:11.616] Login successfull.
+"
+"Visit Main Deploy Pages","DeploySmokeTestOnChrome.TC0001a_Visiallpages","Visit Main Deploy Pages","chrome","132.0.6834.83","windows","18:35:11.656","18:35:11.668","0.01","FAIL","Cannot invoke ""org.testng.asserts.SoftAssert.fail(String)"" because ""this.softAssert"" is null","D:\New Machine\FailedTestImage\visitMainPagesTest.png","Windows 10","Admin","N/A","[18:35:11.657] Test failed with error: Cannot invoke ""org.openqa.selenium.JavascriptExecutor.executeScript(String, Object[])"" because ""js"" is null
+"
+"Visit Analytics Pages","DeploySmokeTestOnChrome.TC0001a_Visiallpages","Visit Analytics Pages","chrome","132.0.6834.83","windows","18:35:18.957",,"0.00","IN_PROGRESS","","","Windows 10","Admin","N/A",""

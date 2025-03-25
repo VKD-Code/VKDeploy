@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+body { font-family: Arial, sans-serif; font-size: 10px; }
+h2 { font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 10px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+.PASS { color: green; }
+.FAIL { color: red; }
+.SKIP { color: orange; }
+.PENDING { color: gray; }
+.system-info { font-size: 10px; margin-bottom: 10px; }
+pre { font-size: 10px; margin: 0; }
+.screenshot { max-width: 200px; cursor: pointer; }
+</style>
+<script>
+function showImage(src) {
+    window.open(src, '_blank', 'width=800,height=600');
+}
+</script>
+</head><body>
+<h2>Test Execution Results</h2>
+<div class='system-info'>
+OS: Windows 10 | User: Admin | Computer: N/A</div>
+<table>
+<tr><th>Test Name</th><th>Result</th><th>Time</th><th>Browser</th><th>Duration</th><th>Logs</th><th>Screenshot</th></tr>
+<tr>
+<td>Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.</td><td class='PASS'>PASS</td><td>21:28:17.454</td><td>chrome 131.0.6778.205</td><td>18.49 sec</td><td><pre>[21:28:27.844] Check console log for login
+[21:28:35.942] Login successfull.
+</pre></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>Select Workstation(s) > Assign Group > Verify Group Assignment</td><td class='FAIL'>FAIL</td><td>21:28:35.964</td><td>chrome 131.0.6778.205</td><td>56.13 sec</td><td><pre>[21:28:43.985] Vikash Test log
+[21:28:44.966] Check console log
+</pre></td>
+<td>
+<img src='file:///D:/New Machine/FailedTestImage/addgroup.png' class='screenshot' onclick='showImage(this.src)' alt='Failed Test Screenshot'/></td>
+</tr>
+<tr>
+<td>Select Workstation(s) > Add Tag > Verify Tag Assignment</td><td class='FAIL'>FAIL</td><td>21:29:36.276</td><td>chrome 131.0.6778.205</td><td>8.20 sec</td><td><pre></pre></td>
+<td>
+<img src='file:///D:/New Machine/FailedTestImage/assigntag.png' class='screenshot' onclick='showImage(this.src)' alt='Failed Test Screenshot'/></td>
+</tr>
+</table></body></html>

@@ -1,0 +1,4 @@
+"Test Name","Class Name","Description","Browser","Version","Platform","Start Time","End Time","Duration (sec)","Status","Error","Screenshot","OS Name","User Name","Computer Name","Logs"
+"Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","DeploySmokeTestOnChrome.TC0001_Login","Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.","chrome","133.0.6943.142","windows","12:40:24.834","12:40:45.374","20.54","PASS","","","Windows 10","Admin","N/A","[12:40:34.158] Check console log for login
+[12:40:45.371] Login successfull.
+"

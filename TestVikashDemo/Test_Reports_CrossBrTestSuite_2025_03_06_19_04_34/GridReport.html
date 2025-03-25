@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html><head>
+<style>
+body { font-family: Arial, sans-serif; font-size: 10px; }
+h2 { font-size: 14px; }
+table { border-collapse: collapse; width: 100%; font-size: 10px; }
+th, td { border: 1px solid #ddd; padding: 8px; text-align: left; }
+th { background-color: #4CAF50; color: white; }
+tr:nth-child(even) { background-color: #f2f2f2; }
+.PASS { color: green; }
+.FAIL { color: red; }
+.SKIP { color: orange; }
+.PENDING { color: gray; }
+.system-info { font-size: 10px; margin-bottom: 10px; }
+pre { font-size: 10px; margin: 0; }
+.screenshot { max-width: 200px; cursor: pointer; }
+.log-content { display: none; }
+.log-button { background-color: #4CAF50; color: white; border: none; padding: 5px 10px; cursor: pointer; border-radius: 3px; }
+.log-button:hover { background-color: #45a049; }
+</style>
+<script>
+function toggleLogs(buttonId, logId) {
+    var logContent = document.getElementById(logId);
+    var button = document.getElementById(buttonId);
+    if (logContent.style.display === 'none') {
+        logContent.style.display = 'block';
+        button.innerHTML = 'Hide Logs';
+    } else {
+        logContent.style.display = 'none';
+        button.innerHTML = 'Show Logs';
+    }
+}
+function showImage(src) {
+    window.open(src, '_blank', 'width=800,height=600');
+}
+</script>
+</head><body>
+<h2>Test Execution Results</h2>
+<div class='system-info'>
+OS: Windows 10 | User: Admin | Computer: N/A</div>
+<table>
+<tr><th>Test Name</th><th>Result</th><th>Time</th><th>Browser</th><th>Duration</th><th>Logs</th><th>Screenshot</th></tr>
+<tr>
+<td>Login > 2FA verification > Disable 2FA in Org Settings > Re-login without 2FA.</td><td class='PASS'>PASS</td><td>19:04:37.727</td><td>chrome 133.0.6943.142</td><td>18.52 sec</td><td>
+<button id='btn_1' class='log-button' onclick='toggleLogs("btn_1", "log_1")'>Show Logs</button><pre id='log_1' class='log-content'>[19:04:48.884] Check console log for login
+[19:04:56.242] Login successfull.
+</pre></td>
+<td>
+</td>
+</tr>
+<tr>
+<td>Select Workstation(s) > Assign Group > Verify Group Assignment</td><td class='FAIL'>FAIL</td><td>19:04:56.263</td><td>chrome 133.0.6943.142</td><td>7.29 sec</td><td>
+<button id='btn_2' class='log-button' onclick='toggleLogs("btn_2", "log_2")'>Show Logs</button><pre id='log_2' class='log-content'></pre></td>
+<td>
+<img src='file:///D:/New Machine/FailedTestImage/addgroup.png' class='screenshot' onclick='showImage(this.src)' alt='Failed Test Screenshot'/></td>
+</tr>
+<tr>
+<td>Select Workstation(s) > Add Tag > Verify Tag Assignment</td><td class='FAIL'>FAIL</td><td>19:05:06.119</td><td>chrome 133.0.6943.142</td><td>4.29 sec</td><td>
+<button id='btn_3' class='log-button' onclick='toggleLogs("btn_3", "log_3")'>Show Logs</button><pre id='log_3' class='log-content'></pre></td>
+<td>
+<img src='file:///D:/New Machine/FailedTestImage/assigntag.png' class='screenshot' onclick='showImage(this.src)' alt='Failed Test Screenshot'/></td>
+</tr>
+</table></body></html>
